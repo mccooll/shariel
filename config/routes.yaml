@@ -3,5 +3,8 @@
 #    controller: App\Controller\DefaultController::index
 
 app_org:
-    path: /org
+    path: /org-e
     controller: App\Controller\OrgController::encode
+app_org_d:
+    path: /org-d
+    controller: App\Controller\OrgController::decode
