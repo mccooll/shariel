@@ -22,7 +22,7 @@ class User
         return $this->name;
     }
 
-    public function setOrg($org)
+    public function setOrg(Org $org)
     {
         $this->org = $org;
     }
