@@ -1,3 +1,7 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+app_org:
+    path: /org
+    controller: App\Controller\OrgController::encode
