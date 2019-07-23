@@ -15,7 +15,7 @@ class Org
     {
     	$this->name = $name;
     	$this->ceo = $ceo;
-    	$this->members = $members;
+    	$this->setMembers($members);
     }
 
     public function setName($name)
@@ -33,7 +33,11 @@ class Org
 	 */
     public function setMembers($members)
     {
-        $this->members = $members;
+        $this->members = [];
+        foreach($members as $member) {
+            $member->setOrg($this);
+            $this->members[] = $member;
+        }
     }
 
     public function getMembers()

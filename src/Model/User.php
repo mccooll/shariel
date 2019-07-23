@@ -6,7 +6,7 @@ class User
     private $name;
     private $org;
 
-    public function __construct(string $name, Org $org)
+    public function __construct(string $name, $org)
     {
     	$this->name = $name;
     	$this->org = $org;
@@ -22,7 +22,7 @@ class User
         return $this->name;
     }
 
-    public function setOrg(Org $org)
+    public function setOrg($org)
     {
         $this->org = $org;
     }
