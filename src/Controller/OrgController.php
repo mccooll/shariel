@@ -41,14 +41,14 @@ class OrgController
                 $this->prettify(
                     $serializer->serialize(
                         $this->setupOrgs(),
-                        'json',
+                        'xml',
                         [
                             'circular_reference_handler' => function ($object) {
                                 return $object->getName();
                             }
                         ]
                     )
-                ,'json')
+                ,'xml')
             )
         );
     }
@@ -57,14 +57,14 @@ class OrgController
     {
         $org = $serializer->serialize(
                     $this->setupOrgs(),
-                    'json',
+                    'xml',
                     [
                         'circular_reference_handler' => function ($object) {
                             return $object->getName();
                         }
                     ]
                 );
-        $org = $serializer->deserialize($org, 'App\Model\Org[]', 'json');
+        $org = $serializer->deserialize($org, 'App\Model\Org[]', 'xml');
         return new Response(
             'Decoded: <pre>'. print_r($org, true)
         );
