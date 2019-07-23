@@ -6,8 +6,12 @@ class Org
     private $name;
     private $ceo;
     private $members;
+    private $createdAt;
 
-    public function __construct(string $name, ?User $ceo, array $members)
+    /**
+	 * @param User[] $members Org members
+	 */
+    public function __construct(string $name, ?User $ceo, array $members = [])
     {
     	$this->name = $name;
     	$this->ceo = $ceo;
@@ -24,6 +28,9 @@ class Org
         return $this->name;
     }
 
+	/**
+	 * @param User[] $members Org members
+	 */
     public function setMembers($members)
     {
         $this->members = $members;
@@ -40,5 +47,13 @@ class Org
 
     public function getCeo() {
     	return $this->ceo;
+    }
+
+    public function setCreatedAt(\DateTime $date) {
+    	$this->createdAt = $date;
+    }
+
+    public function getCreatedAt(): \DateTime {
+    	return $this->createdAt;
     }
 }
