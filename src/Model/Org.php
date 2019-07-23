@@ -14,7 +14,7 @@ class Org
     public function __construct(string $name, ?User $ceo, array $members = [])
     {
     	$this->name = $name;
-    	$this->ceo = $ceo;
+    	$this->setCeo($ceo);
     	$this->setMembers($members);
     }
 
@@ -46,6 +46,7 @@ class Org
     }
 
     public function setCeo($user) {
+        if($user) $user->setOrg($this);
     	$this->ceo = $user;
     }
 
