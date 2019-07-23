@@ -13,4 +13,4 @@ Example ~/.bash_profile:
 export PATH="$HOME/.symfony/bin:$PATH" 
 export PATH="$HOME/.composer/bin:$PATH"
 ```
-In this case ~/.composer/bin contains composer.phar renamed to composer.
+In this case ~/.composer/bin contains composer.phar renamed to composer. Close and re-open bash terminal after editing this file.
