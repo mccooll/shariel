@@ -64,7 +64,7 @@ class OrgController
                         }
                     ]
                 );
-        $org = $serializer->deserialize($org, Org::class, 'json');
+        $org = $serializer->deserialize($org, 'App\Model\Org[]', 'json');
         return new Response(
             'Decoded: <pre>'. print_r($org, true)
         );
